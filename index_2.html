@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Oficina da Escrita</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f3f5ff;
+            color: #303653;
+        }
+
+        header {
+            background: #5865d8;
+            color: white;
+            padding: 25px 8%;
+        }
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 8px;
+        }
+
+        nav {
+            background: #424eb8;
+            padding: 16px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffe28a;
+        }
+
+        .inicio {
+            text-align: center;
+            padding: 65px 8%;
+            background: #e4e8ff;
+        }
+
+        .inicio h2 {
+            color: #424eb8;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .inicio p {
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #5865d8;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .botao:hover {
+            background: #424eb8;
+        }
+
+        .conteudo {
+            padding: 50px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .titulo h2 {
+            color: #424eb8;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            display: block;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #303653;
+            border-bottom: 5px solid #7580e8;
+            box-shadow: 0 4px 12px #00000010;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 18px #00000020;
+        }
+
+        .emoji {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #424eb8;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .pagina {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 35px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px #00000010;
+            scroll-margin-top: 20px;
+        }
+
+        .pagina h2 {
+            color: #424eb8;
+            margin-bottom: 20px;
+            font-size: 27px;
+        }
+
+        .pagina h3 {
+            color: #5865d8;
+            margin: 20px 0 10px;
+        }
+
+        .pagina p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .pagina li {
+            margin: 12px 0 12px 22px;
+            line-height: 1.6;
+        }
+
+        .caixa {
+            background: #f1f2ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .historia {
+            background: #fff8df;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 12px;
+            border: 1px solid #bbc2e0;
+            border-radius: 10px;
+            margin: 10px 0 20px;
+            font-size: 15px;
+            resize: vertical;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 22px;
+            background: #5865d8;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .voltar:hover {
+            background: #424eb8;
+        }
+
+        footer {
+            background: #424eb8;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .inicio h2 {
+                font-size: 28px;
+            }
+
+            .pagina {
+                margin: 20px 12px;
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Oficina da Escrita</h1>
+    <p>Aprender, imaginar e escrever!</p>
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#conteudos">Aprender</a>
+</nav>
+
+<!-- PORTAL INICIAL -->
+
+<section class="inicio" id="inicio">
+
+    <h2>Bem-vindo à Oficina da Escrita! ✏️</h2>
+
+    <p>
+        Aqui você pode aprender novas palavras, ler histórias,
+        praticar sua escrita e usar sua criatividade.
+        Escolha uma das opções abaixo e comece sua aventura!
+    </p>
+
+    <a href="#conteudos" class="botao">Explorar o portal</a>
+
+</section>
+
+<main>
+
+<!-- CARDS DO PORTAL -->
+
+<section class="conteudo" id="conteudos">
+
+    <div class="titulo">
+        <h2>Explore nosso portal</h2>
+        <p>Escolha o que deseja aprender hoje!</p>
+    </div>
+
+    <div class="cards">
+
+        <a href="#leitura" class="card">
+            <div class="emoji">📖</div>
+            <h3>Hora da leitura</h3>
+            <p>Leia histórias e descubra novas aventuras.</p>
+        </a>
+
+        <a href="#redacao" class="card">
+            <div class="emoji">✍️</div>
+            <h3>Minha redação</h3>
+            <p>Aprenda a criar seus próprios textos.</p>
+        </a>
+
+        <a href="#dicas" class="card">
+            <div class="emoji">💡</div>
+            <h3>Dicas de escrita</h3>
+            <p>Descubra como melhorar sua escrita.</p>
+        </a>
+
+        <a href="#atividades" class="card">
+            <div class="emoji">🧩</div>
+            <h3>Atividades</h3>
+            <p>Pratique com exercícios divertidos.</p>
+        </a>
+
+        <a href="#palavras" class="card">
+            <div class="emoji">🔤</div>
+            <h3>Palavras e ortografia</h3>
+            <p>Aprenda a escrever corretamente.</p>
+        </a>
+
+        <a href="#desafios" class="card">
+            <div class="emoji">🏆</div>
+            <h3>Desafios criativos</h3>
+            <p>Use sua imaginação e crie histórias.</p>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- LEITURA -->
+
+<section class="pagina" id="leitura">
+
+    <h2>📖 Hora da leitura</h2>
+
+    <p>Escolha uma história, leia com atenção e responda à pergunta!</p>
+
+    <div class="historia">
+        <h3>O cachorro perdido</h3>
+
+        <p>
+            Pedro estava voltando da escola quando encontrou
+            um cachorro sozinho na rua. Ele percebeu que o
+            animal estava perdido e decidiu ajudá-lo.
+            Depois de procurar, encontrou a dona do cachorro.
+            Ela ficou muito feliz e agradeceu a Pedro.
+        </p>
+
+        <p><strong>Pergunta:</strong> Como Pedro ajudou o cachorro?</p>
+    </div>
+
+    <div class="historia">
+        <h3>Uma amizade diferente</h3>
+
+        <p>
+            Ana gostava de brincar no parque. Um dia,
+            conheceu uma menina que tinha gostos diferentes
+            dos seus. As duas começaram a conversar e
+            descobriram que poderiam ser grandes amigas.
+        </p>
+
+        <p><strong>Pergunta:</strong> Como começou essa amizade?</p>
+    </div>
+
+    <div class="historia">
+        <h3>O sonho de Lucas</h3>
+
+        <p>
+            Lucas adorava desenhar. Todos os dias,
+            separava um tempo para praticar.
+            Seu maior sonho era criar seus próprios livros.
+        </p>
+
+        <p><strong>Pergunta:</strong> Qual era o sonho de Lucas?</p>
+    </div>
+
+    <a href="#inicio" class="voltar">← Voltar ao portal</a>
+
+</section>
+
+<!-- REDAÇÃO -->
+
+<section class="pagina" id="redacao">
+
+    <h2>✍️ Minha redação</h2>
+
+    <p>Vamos aprender a organizar um texto!</p>
+
+    <div class="caixa">
+        <h3>1. Começo</h3>
+        <p>Apresente o assunto da sua história ou texto.</p>
+    </div>
+
+    <div class="caixa">
+        <h3>2. Meio</h3>
+        <p>Conte o que aconteceu e desenvolva suas ideias.</p>
+    </div>
+
+    <div class="caixa">
+        <h3>3. Fim</h3>
+        <p>Termine sua história ou apresente sua ideia final.</p>
+    </div>
+
+    <h3>Agora é sua vez!</h3>
+
+    <p>
+        Tema: Se você pudesse mudar alguma coisa no mundo,
+        o que seria? Explique sua resposta.
+    </p>
+
+    <textarea placeholder="Escreva sua redação aqui..."></textarea>
+
+    <a href="#inicio" class="voltar">← Voltar ao portal</a>
+
+</section>
+
+<!-- DICAS -->
+
+<section class="pagina" id="dicas">
+
+    <h2>💡 Dicas de escrita</h2>
+
+    <p>Confira algumas dicas para deixar seus textos melhores!</p>
+
+    <div class="caixa">
+        <h3>📌 Leia bastante</h3>
+        <p>Ler ajuda você a conhecer novas palavras e ideias.</p>
+    </div>
+
+    <div class="caixa">
+        <h3>📌 Organize suas ideias</h3>
+        <p>Pense no que deseja contar antes de começar a escrever.</p>
+    </div>
+
+    <div class="caixa">
+        <h3>📌 Use a pontuação</h3>
+        <p>Vírgulas e pontos ajudam a organizar seu texto.</p>
+    </div>
+
+    <div class="caixa">
+        <h3>📌 Revise sua escrita</h3>
+        <p>Leia novamente para encontrar possíveis erros.</p>
+    </div>
+
+    <a href="#inicio" class="voltar">← Voltar ao portal</a>
+
+</section>
+
+<!-- ATIVIDADES -->
+
+<section class="pagina" id="atividades">
+
+    <h2>🧩 Atividades</h2>
+
+    <p>Chegou a hora de colocar o aprendizado em prática!</p>
+
+    <h3>1. Complete a frase:</h3>
+    <p>Eu gosto de ler ______ porque...</p>
+
+    <textarea placeholder="Sua resposta..."></textarea>
+
+    <h3>2. Crie uma frase usando a palavra amizade.</h3>
+
+    <textarea placeholder="Sua resposta..."></textarea>
+
+    <h3>3. Imagine que você encontrou um animal perdido.</h3>
+    <p>O que você faria para ajudá-lo?</p>
+
+    <textarea placeholder="Sua resposta..."></textarea>
+
+    <h3>4. Conte como foi seu dia.</h3>
+
+    <textarea placeholder="Sua resposta..."></textarea>
+
+    <a href="#inicio" class="voltar">← Voltar ao portal</a>
+
+</section>
+
+<!-- PALAVRAS -->
+
+<section class="pagina" id="palavras">
+
+    <h2>🔤 Palavras e ortografia</h2>
+
+    <p>Algumas palavras parecem iguais, mas possuem significados diferentes!</p>
+
+    <div class="caixa">
+        <h3>MAS</h3>
+        <p>Usamos para mostrar uma ideia contrária.</p>
+        <p>Exemplo: Eu queria brincar, mas estava chovendo.</p>
+    </div>
+
+    <div class="caixa">
+        <h3>MAIS</h3>
+        <p>Usamos para indicar quantidade.</p>
+        <p>Exemplo: Quero mais um livro.</p>
+    </div>
+
+    <div class="caixa">
+        <h3>MAU</h3>
+        <p>É o contrário de bom.</p>
+        <p>Exemplo: O personagem era mau.</p>
+    </div>
+
+    <div class="caixa">
+        <h3>MAL</h3>
+        <p>É o contrário de bem.</p>
+        <p>Exemplo: Hoje acordei mal.</p>
+    </div>
+
+    <h3>Conheça novas palavras!</h3>
+
+    <p><strong>Imaginação:</strong> capacidade de criar ideias na mente.</p>
+    <p><strong>Coragem:</strong> força para enfrentar desafios.</p>
+    <p><strong>Amizade:</strong> carinho e companheirismo entre pessoas.</p>
+
+    <a href="#inicio" class="voltar">← Voltar ao portal</a>
+
+</section>
+
+<!-- DESAFIOS -->
+
+<section class="pagina" id="desafios">
+
+    <h2>🏆 Desafios criativos</h2>
+
+    <p>Use sua imaginação para completar os desafios!</p>
+
+    <h3>Desafio 1: A porta mágica 🚪</h3>
+
+    <p>
+        Imagine que você encontrou uma porta mágica.
+        Para onde ela levaria? O que existiria do outro lado?
+    </p>
+
+    <textarea placeholder="Crie sua história..."></textarea>
+
+    <h3>Desafio 2: Um dia diferente 🌎</h3>
+
+    <p>
+        Imagine que você acordou e descobriu que podia
+        conversar com os animais. O que aconteceria?
+    </p>
+
+    <textarea placeholder="Conte sua aventura..."></textarea>
+
+    <h3>Desafio 3: Invente um personagem 🦸</h3>
+
+    <p>
+        Crie um personagem, escolha seu nome,
+        seus poderes e conte uma aventura dele.
+    </p>
+
+    <textarea placeholder="Apresente seu personagem..."></textarea>
+
+    <a href="#inicio" class="voltar">← Voltar ao portal</a>
+
+</section>
+
+</main>
+
+<footer>
+    <p>📚 Oficina da Escrita</p>
+    <p>Aprender, imaginar e escrever!</p>
+    <p>Projeto educativo - 2026</p>
+</footer>
+
+</body>
+</html>
